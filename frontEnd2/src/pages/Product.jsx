@@ -5,6 +5,7 @@ import assets from "../assets/assets";
 import ProductItem from "../components/ProductItem";
 import Title from "../components/Title";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 function Product() {
   const { productId } = useParams();
@@ -17,9 +18,9 @@ function Product() {
 
   const handleAddToCart = () => {
     if(size == ''){
-      alert("Please select the size")
+      toast.error("Please select the size");
     } else {
-      updateCart(product._id, 'add', size)
+      updateCart(product._id, "add", size)
     }
   }
   if (!product) {

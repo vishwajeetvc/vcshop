@@ -25,7 +25,7 @@ function Navbar() {
       </div>
       <div className="flex gap-3 sm:gap-5 cursor-pointer">
         <div className="relative">
-          <ShoppingCart />
+         <Link to="/cart"><ShoppingCart /></Link>
           <p className="absolute px-1 sm:text-[12px] text-[9px] rounded-full left-2 top-[-10px] sm:top-[-14px] sm:left-1 bg-black text-white">
             {Object.values(cart).map(item => Object.values(item)).flat().reduce((acc, qty)=> acc+qty, 0)}
           </p>

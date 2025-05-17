@@ -8,11 +8,13 @@ import Collection from "./pages/Collection";
 import Product from "./pages/Product";
 import Login from "./pages/Login";
 import Cart from "./pages/Cart";
+import { ToastContainer} from 'react-toastify';
 
 function App() {
   return (
     <div className="px-4 sm:px-[5vw] md:px-[7vw] lg:px-[9vw]">
       <Navbar />
+      <ToastContainer/>
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/contact" element={<Contact />} />

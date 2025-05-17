@@ -7,12 +7,10 @@ export const ShopContext = createContext({});
 export default function ShopContextProvider({ children }) {
   const [cart, setCart] = useState({});
 
-  console.log(cart)
-
   const updateCart = (productId, action, size) => {
     if(action == 'add'){
       if(productId in cart){
-        cart[productId][size] +=1;
+        cart[productId][size] = (cart[productId][size] ?? 0) + 1;
         setCart({...cart})
       } else {
         setCart({...cart, [productId] : {[size] : 1 }})
