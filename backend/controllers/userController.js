@@ -7,7 +7,32 @@ const createToken = (id) =>  {
   return jwt.sign({id}, process.env.JWT_SECRET)
 }
 
-const loginUser = async (req, res) => {}
+const loginUser = async (req, res) => {
+
+  try {
+    const {email, password} = req.body;
+
+    const user = await userModel.findOne({email});
+
+    if(!user) {
+      return res.json({success:false, message : "User doesn't exists"});
+    } 
+
+    const isMatch = await bcrypt.compare(password, user.password);
+
+    if(isMatch) {
+      const token = createToken(user._id);
+      res.json({success:true, token})
+    } else {
+      res.json({success:false, msg: "Invalid Credentials"});
+    }
+
+  } catch {
+    console.log("login Error");
+    res.json({success:false, msg: "Something went wrong"});
+  }
+
+}
 
 const registerUser = async (req, res)=> {
 
@@ -47,6 +72,20 @@ const registerUser = async (req, res)=> {
 
 const adminLogin = async (req, res) => {
 
+  try {
+    const {email, password} = req.body 
+
+    if(email == process.env.ADMIN_EMAIL && password == process.env.ADMIN_PASSWORD){
+
+      const token = jwt.sign(email+password, process.env.JWT_SECRET);
+      res.json({success:true, token})
+
+    } else {
+      res.json({success:false, msg : "Invalid Credentials"});
+    }
+  } catch (error) {
+      res.json({success:false, msg : "Something went wrong"});
+  }
 }
 
 export {loginUser, registerUser, adminLogin}
