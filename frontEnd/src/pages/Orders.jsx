@@ -27,7 +27,7 @@ function Orders() {
                   <p>Size : M</p>
                 </div>
                 <p className="mt-2">
-                  Date: <span classNam="text-gray-400">25/02/2025</span>
+                  Date: <span className="text-gray-400">25/02/2025</span>
                 </p>
               </div>
             </div>

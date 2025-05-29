@@ -14,7 +14,9 @@ function Product() {
   const fetchProductData = async () => {
     const foundProduct = products.find((item) => item._id == productId);
     setProductData(foundProduct);
-    setImage(foundProduct.image[0]);
+    if(foundProduct){
+      setImage(foundProduct.image[0]);
+    }
   };
   useEffect(() => {
     fetchProductData();

@@ -8,12 +8,10 @@ import { useEffect, useState } from "react"
 import Login from "./components/Login"
 import { ToastContainer } from "react-toastify"
 
-
 export const backendUrl = import.meta.env.VITE_BACKEND_URL
 
 function App() {
   const [token, setToken] = useState(localStorage.getItem('token') ?? "");
-
 
   useEffect(()=>{
 
@@ -30,7 +28,7 @@ function App() {
             <hr/>
             <div className="flex">
               <SideBar/>
-              <div className="p-10">
+              <div className="p-10 w-full">
                 <Routes>
                   <Route path="/add" element={<Add token={token}/>}/>
                   <Route path="/list" element={<List token={token}/>}/>

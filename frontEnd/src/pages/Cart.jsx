@@ -5,25 +5,29 @@ import { assets } from "../assets/assets";
 import CartTotal from "../components/CartTotal";
 
 export default function Cart() {
-  const { currency, cartItems, products, updateQuantity, navigate } =
-    useContext(ShopContext);
+  const { currency, cartItems, products, updateQuantity, navigate } = useContext(ShopContext);
   const [cartData, setCartData] = useState([]);
 
   useEffect(() => {
-    const temp = [];
-    for (let item in cartItems) {
-      for (let size in cartItems[item]) {
-        if (cartItems[item][size] > 0) {
-          temp.push({
-            _id: item,
-            size: size,
-            quantity: cartItems[item][size],
-          });
+
+    if(products.length > 0) {
+      const temp = [];
+      for (let item in cartItems) {
+        for (let size in cartItems[item]) {
+          if (cartItems[item][size] > 0) {
+            temp.push({
+              _id: item,
+              size: size,
+              quantity: cartItems[item][size],
+            });
+          }
         }
       }
+      setCartData(temp);
     }
-    setCartData(temp);
-  }, [cartItems]);
+
+  }, [cartItems, products.length]);
+
 
   return (
     <div className="border-t pt-14">
@@ -31,10 +35,13 @@ export default function Cart() {
         <Title text1={"YOUR"} text2={"CART"} />
       </div>
       <div>
-        {cartData.map((item, index) => {
+        {cartData?.map((item, index) => {
           const productData = products.find(
             (product) => product._id === item._id,
           );
+
+          console.log(cartData)
+          console.log(productData)
           return (
             <div
               key={index}
