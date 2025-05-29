@@ -1,107 +1,112 @@
-# vcshop
-📝 VC Shop App – Documentation Pages (v1)
+# 🛍️ VC Shop App – Documentation (v1)
 
-1. Home Page (home.png)
+Welcome to the **VC Shop** project! This documentation showcases each core page of the app with a screenshot and highlights of features.
+
+---
+
+## 1. 🏠 Home Page  
+📷 `home.png`  
 ![Home Page](./sample/home.png)
-Overview:
-Displays top products with images, names, prices.
 
-Hero section for banner or promotion.
+**Overview:**  
+- Displays top products with images, names, and prices  
+- Hero section for banner/promotion  
+- Navigation bar with links (Home, Shop, Cart, etc.)
 
-Navigation bar with links (Home, Shop, Cart, etc.)
+**✨ Features:**  
+- Product previews  
+- Navigation bar  
+- Responsive layout (assumed)
 
-Features:
-Product preview.
+---
 
-Navigation bar.
+## 2. 🗂️ Collection Page  
+📷 `collection.png`  
+![Collection Page](./sample/collection.png)
 
-Responsive layout (assumed from design).
+**Overview:**  
+- Lists products from selected category  
+- Grid layout for product cards  
+- Possible filter/sort options
 
-2. Collection Page (collection.png)
-![Collection page](./sample/collection.png)
-Overview:
-Lists products from a selected category.
+**✨ Features:**  
+- Category-wise display  
+- Add-to-cart on product cards  
+- Dynamic routing (assumed)
 
-Filter or sort options (if implemented).
+---
 
-Product cards in grid format.
+## 3. 🛒 Product Page  
+📷 `product.png`  
+![Product Page](./sample/product.png)
 
-Features:
-Category-wise product display.
+**Overview:**  
+- Detailed view of a single product  
+- Shows image, name, description, and price  
+- Quantity selector + "Add to Cart" button
 
-Product cards with add-to-cart button.
+**✨ Features:**  
+- Dynamic product rendering  
+- Stock control (assumed)  
+- Cart integration
 
-Dynamic routing for categories (assumed).
+---
 
-3. Product Page (product.png)
-![product page](./sample/product.png)
-Overview:
-Individual product details page.
+## 4. 🛍️ Cart Page  
+📷 `cart.png`  
+![Cart Page](./sample/cart.png)
 
-Shows image, name, description, price.
+**Overview:**  
+- Displays all items in the cart  
+- Allows quantity updates or removal  
+- Shows subtotal and total price
 
-Quantity selector and "Add to Cart" button.
+**✨ Features:**  
+- State management (likely via Redux Toolkit)  
+- Checkout functionality  
+- Item update/remove actions
 
-Features:
-Dynamic product rendering.
+---
 
-Cart integration.
+## 5. 📦 Orders Page  
+📷 `orders.png`  
+![Orders Page](./sample/orders.png)
 
-Stock availability or quantity control.
+**Overview:**  
+- Lists placed orders with details  
+- Displays product info, total price, and order status
 
-4. Cart Page (cart.png)
-![cart page](./sample/cart.png)
-Overview:
-Shows items added to the cart.
+**✨ Features:**  
+- Order tracking UI  
+- Past order history  
+- Backend connection for live data (assumed)
 
-Allows quantity update or removal of items.
+---
 
-Subtotal and total price shown.
+## 6. 🧑‍💻 About Page  
+📷 `about.png`  
+![About Page](./sample/about.png)
 
-Features:
-Cart state management (Redux Toolkit likely).
+**Overview:**  
+- Info about the app or team  
+- Static content (e.g., bios, mission)
 
-Checkout button.
+**✨ Features:**  
+- Informational layout  
+- Static route
 
-Remove/update actions per item.
+---
 
-5. Orders Page (orders.png)
-![orders page](./sample/orders.png)
-Overview:
-Displays list of placed orders.
+## 7. ✉️ Contact Page  
+📷 `contact.png`  
+![Contact Page](./sample/contact.png)
 
-Each order shows products, total amount, and status.
+**Overview:**  
+- Contact form with inputs: name, email, message  
+- Submit button for sending inquiries
 
-Features:
-Order tracking UI.
+**✨ Features:**  
+- Form submission (via email/DB or console)  
+- Input validation (assumed)
 
-Past order listing.
-
-Backend integration assumed for dynamic data.
-
-6. About Page (about.png)
-![about page](./sample/about.png)
-Overview:
-Displays app or team information.
-
-Static text or bio.
-
-Features:
-Informational.
-
-Static route.
-
-7. Contact Page (contact.png)
-![contact page](./sample/contact.png)
-Overview:
-Contact form for users.
-
-Inputs: name, email, message.
-
-Submit button.
-
-Features:
-Contact form submission (email/DB or console).
-
-Input validation (assumed).
-
+---
